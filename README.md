@@ -8,6 +8,12 @@ As inspired by https://github.com/google/deepdream
 
 Clone this repo into a directory on your machine, and also clone the [Caffe repo](https://github.com/BVLC/caffe) in a directory parallel to this one.
 
+Ensure you have Python installed on your machine and accessible via your system path. 
+
+Ensure you have the dependencies installed as specified in the [Deep Dream Notebook](https://github.com/google/deepdream/blob/master/dream.ipynb). Using MacPorts, I installed these dependencies using this command:
+
+`sudo port install caffe py-numpy py-ipython py-pil py-scipy py-protobuf`
+
 ## Running the script
 
 From the command line, type:
