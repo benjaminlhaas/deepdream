@@ -8,14 +8,14 @@ from IPython.display import clear_output, Image, display
 from google.protobuf import text_format
 import caffe
 
-
+default_image = 'ben.jpg'
 img_file = ''
 
 if (len(sys.argv) >= 2):
     img_file = sys.argv[1]
 else:
     print "Wrong number of arguments."
-    img_file = 'ben.jpg'
+    img_file = default_image
 
 print "\nUsing input image file: " + img_file + "\n"
 
