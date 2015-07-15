@@ -8,7 +8,18 @@ from IPython.display import clear_output, Image, display
 from google.protobuf import text_format
 import caffe
 
-img_file = 'raybirthday.jpg'
+
+img_file = ''
+
+if (len(sys.argv) >= 2):
+    img_file = sys.argv[1]
+else:
+    print "Wrong number of arguments."
+    img_file = 'ben.jpg'
+
+print "\nUsing input image file: " + img_file + "\n"
+
+
 img_file_name = img_file.split('.')[0]
 img = np.float32(PIL.Image.open(img_file))
 
@@ -116,14 +127,15 @@ def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='incep
 
 
 #showarray(img)
-#_=deepdream(net, img)
+_=deepdream(net, img)
 
-frame = img
-frame_i = 0
-h, w = frame.shape[:2]
-s = 0.05 # scale coefficient
-for i in xrange(20):
-    frame = deepdream(net, frame)
-    PIL.Image.fromarray(np.uint8(frame)).save("frames/%04d.jpg" % frame_i)
-    frame = nd.affine_transform(frame, [1-s,1-s,1], [h*s/2,w*s/2,0], order=1)
-    frame_i += 1
+# frame = img
+# frame_i = 0
+# h, w = frame.shape[:2]
+# s = 0.05 # scale coefficient
+# for i in xrange(20):
+#     print 'i = ' + i
+#     frame = deepdream(net, frame)
+#     PIL.Image.fromarray(np.uint8(frame)).save("frames/%04d.jpg" % frame_i)
+#     frame = nd.affine_transform(frame, [1-s,1-s,1], [h*s/2,w*s/2,0], order=1)
+#     frame_i += 1
