@@ -8,7 +8,7 @@ As inspired and instructed by https://github.com/google/deepdream
 
 Clone this repo into a directory on your machine, and also clone the [Caffe repo](https://github.com/BVLC/caffe) in a directory parallel to this one. 
 
-Make sure you have at least one caffe model downloaded and placed in the corrct model path in this caffe repo. For example, I used the GoogleNet model, identified as [bvlc_googlenet.caffemodel](http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel), and placed in /caffe/models/bvlc_googlenet.
+Make sure you have at least one caffe model downloaded and placed in the corrct model path in the caffe repo from the previous step. For example, I used the GoogleNet model, identified as [bvlc_googlenet.caffemodel](http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel), and placed it in /caffe/models/bvlc_googlenet.
 
 Ensure you have Python installed on your machine and accessible via your system path. 
 
@@ -16,7 +16,7 @@ Install the dependencies as specified in the [Deep Dream Notebook](https://githu
 
 `sudo port install caffe py-numpy py-ipython py-pil py-scipy py-protobuf`
 
-## Running the script
+## Generating images
 
 From the command line, type:
 
