@@ -1,16 +1,16 @@
 # Deep Dream
 
-As inspired by https://github.com/google/deepdream
+As inspired and instructed by https://github.com/google/deepdream
 
 # Directions
 
 ## Installation
 
-Clone this repo into a directory on your machine, and also clone the [Caffe repo](https://github.com/BVLC/caffe) in a directory parallel to this one.
+Clone this repo into a directory on your machine, and also clone the [Caffe repo](https://github.com/BVLC/caffe) in a directory parallel to this one. Also make sure you have at least one caffe model downloaded and placed in the corrct model path in this caffe repo. For example, I used the GoogleNet model, identified as [bvlc_googlenet.caffemodel](http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel).
 
 Ensure you have Python installed on your machine and accessible via your system path. 
 
-Ensure you have the dependencies installed as specified in the [Deep Dream Notebook](https://github.com/google/deepdream/blob/master/dream.ipynb). Using MacPorts, I installed these dependencies using this command:
+Install the dependencies as specified in the [Deep Dream Notebook](https://github.com/google/deepdream/blob/master/dream.ipynb). Using MacPorts, I installed these dependencies using this command:
 
 `sudo port install caffe py-numpy py-ipython py-pil py-scipy py-protobuf`
 
