@@ -23,3 +23,7 @@ From the command line, type:
 `python app.py [filename]`
 
 where `[filename]` is the full name of an image file located in the same directory as the script. If you don't supply a `[filename]` argument, the script will use a default file, as specified in the script
+
+## Notes
+
+The file `caffe_layers.txt` file is the listing of all available caffe layers (it is the output of running `net.blobs.keys()`)

@@ -73,11 +73,9 @@ def make_step(net, step_size=1.5, end='inception_4c/output', jitter=32, clip=Tru
         bias = net.transformer.mean['data']
         src.data[:] = np.clip(src.data, -bias, 255-bias)    
 
-def showarray(a, fmt='jpeg'):
+def save_array_to_image(a, fmt='jpeg'):
     a = np.uint8(np.clip(a, 0, 255))
-    #f = StringIO()
     PIL.Image.fromarray(a).save(img_file_name + "_" + time_str + ".jpeg", fmt)
-    #display(Image(data=f.getvalue()))
 
 def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='inception_4c/output', clip=True, **step_params):
     
@@ -113,7 +111,7 @@ def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='incep
             if not clip: # adjust image contrast if clipping is disabled
                 vis = vis*(255.0/np.percentile(vis, 99.98))
             
-            showarray(vis)
+            save_array_to_image(vis)
             
             print octave, i, end, vis.shape
             
@@ -126,9 +124,11 @@ def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='incep
     return deprocess(net, src.data[0])
 
 
-#showarray(img)
 _=deepdream(net, img)
 
+# Uncomment this block below to loop an output image back in as an input image.
+# Resulting images will be placed in the 'frames' directory
+#
 # frame = img
 # frame_i = 0
 # h, w = frame.shape[:2]
