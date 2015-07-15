@@ -73,9 +73,9 @@ def make_step(net, step_size=1.5, end='inception_4c/output', jitter=32, clip=Tru
         bias = net.transformer.mean['data']
         src.data[:] = np.clip(src.data, -bias, 255-bias)    
 
-def save_array_to_image(a, fmt='jpeg'):
-    a = np.uint8(np.clip(a, 0, 255))
-    PIL.Image.fromarray(a).save(img_file_name + "_" + time_str + ".jpeg", fmt)
+def save_array_to_image(arr, fmt='jpeg'):
+    arr = np.uint8(np.clip(arr, 0, 255))
+    PIL.Image.fromarray(arr).save(img_file_name + "_" + time_str + ".jpeg", fmt)
 
 def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='inception_4c/output', clip=True, **step_params):
     
@@ -89,6 +89,8 @@ def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='incep
     
     detail = np.zeros_like(octaves[-1]) # allocate image for network-produced details
     
+    vis = None
+
     for octave, octave_base in enumerate(octaves[::-1]):
         
         h, w = octave_base.shape[-2:]
@@ -110,9 +112,7 @@ def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='incep
             
             if not clip: # adjust image contrast if clipping is disabled
                 vis = vis*(255.0/np.percentile(vis, 99.98))
-            
-            save_array_to_image(vis)
-            
+
             print octave, i, end, vis.shape
             
             clear_output(wait=True)
@@ -121,6 +121,9 @@ def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='incep
         detail = src.data[0]-octave_base
     
     # returning the resulting image
+
+    save_array_to_image(vis)
+
     return deprocess(net, src.data[0])
 
 
