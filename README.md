@@ -4,11 +4,11 @@ As inspired by https://github.com/google/deepdream
 
 # Directions
 
-# Installation
+## Installation
 
-Clone this repo into a directory on your machine, and also clone the [Caffe repo](https://github.com/BVLC/caffe in a directory parallel to this one.
+Clone this repo into a directory on your machine, and also clone the [Caffe repo](https://github.com/BVLC/caffe) in a directory parallel to this one.
 
-# Running the script
+## Running the script
 
 From the command line, type:
 
