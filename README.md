@@ -6,7 +6,9 @@ As inspired and instructed by https://github.com/google/deepdream
 
 ## Installation
 
-Clone this repo into a directory on your machine, and also clone the [Caffe repo](https://github.com/BVLC/caffe) in a directory parallel to this one. Also make sure you have at least one caffe model downloaded and placed in the corrct model path in this caffe repo. For example, I used the GoogleNet model, identified as [bvlc_googlenet.caffemodel](http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel).
+Clone this repo into a directory on your machine, and also clone the [Caffe repo](https://github.com/BVLC/caffe) in a directory parallel to this one. 
+
+Make sure you have at least one caffe model downloaded and placed in the corrct model path in this caffe repo. For example, I used the GoogleNet model, identified as [bvlc_googlenet.caffemodel](http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel), and placed in /caffe/models/bvlc_googlenet.
 
 Ensure you have Python installed on your machine and accessible via your system path. 
 
