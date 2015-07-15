@@ -22,7 +22,9 @@ From the command line, type:
 
 `python app.py [filename]`
 
-where `[filename]` is the full name of an image file located in the same directory as the script. If you don't supply a `[filename]` argument, the script will use a default file, as specified in the script
+where `[filename]` is the full name of an image file located in the same directory as the script. If you don't supply a `[filename]` argument, the script will use a default file, as specified in the script.
+
+The script will save output image files to disk, either in the root level, or in the 'frames' directory.
 
 ## Notes
 
