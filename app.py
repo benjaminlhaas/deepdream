@@ -14,12 +14,12 @@ img_file = ''
 if (len(sys.argv) >= 2):
     img_file = sys.argv[1]
 else:
-    print "Wrong number of arguments."
+    print ("Wrong number of arguments.")
     img_file = default_image
 
-print "\nUsing input image file: " + img_file + "\n"
+print ("\nUsing input image file: " + img_file + "\n")
 
-
+sys.exit()
 img_file_name = img_file.split('.')[0]
 img = np.float32(PIL.Image.open(img_file))
 
@@ -113,7 +113,7 @@ def deepdream(net, base_img, iter_n=10, octave_n=4, octave_scale=1.4, end='incep
             if not clip: # adjust image contrast if clipping is disabled
                 vis = vis*(255.0/np.percentile(vis, 99.98))
 
-            print octave, i, end, vis.shape
+            print (octave, i, end, vis.shape)
             
             clear_output(wait=True)
             
@@ -137,7 +137,7 @@ _=deepdream(net, img)
 # h, w = frame.shape[:2]
 # s = 0.05 # scale coefficient
 # for i in xrange(20):
-#     print 'i = ' + i
+#     print ('i = ' + i)
 #     frame = deepdream(net, frame)
 #     PIL.Image.fromarray(np.uint8(frame)).save("frames/%04d.jpg" % frame_i)
 #     frame = nd.affine_transform(frame, [1-s,1-s,1], [h*s/2,w*s/2,0], order=1)
